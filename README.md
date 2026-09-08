@@ -27,7 +27,8 @@ Vntc
 │       │   ├── entryability/  # EntryAbility（入口 UI 能力）
 │       │   ├── pages/         # Index 主界面（ArkUI）
 │       │   └── vpn/           # VntVpnAbility、配置存储与常量
-│       ├── cpp/               # C/C++ 原生模块（vnt 内核 N-API 桥接 libvnt_napi）
+│       ├── cpp/               # C/C++ N-API 桥接模块（libvnt_napi）
+│       ├── libs/              # 预编译原生内核固件 libvnt_ffi.so（按 ABI 存放，不入库）
 │       └── resources/         # 资源文件
 ├── hvigor/                    # 构建脚本
 ├── build-profile.json5        # 构建与签名配置
@@ -41,14 +42,33 @@ Vntc
 - HarmonyOS SDK（需匹配工程 `modelVersion` / `targetSdkVersion` 所要求的 API 版本）
 - 一台支持 HarmonyOS 的手机，用于真机调试与运行
 
+## 原生内核固件（.so）
+
+数据转发内核 `libvnt_ffi.so` 为**预编译二进制**，源码不在本仓库内，请从以下仓库获取与版本匹配的固件：
+
+- 固件仓库：https://cnb.cool/16c.top/vntc-1.2.17
+
+安装方法：将对应 ABI 的 `libvnt_ffi.so` 放到如下路径（工程已通过 `.gitignore` 排除该目录，不会被提交）：
+
+```
+entry/libs/<ABI>/libvnt_ffi.so
+```
+
+例如 `arm64-v8a` 架构：
+
+```
+entry/libs/arm64-v8a/libvnt_ffi.so
+```
+
+> 说明：`entry/src/main/cpp` 仅编译 N-API 桥接层 `libvnt_napi`，其在 `CMakeLists.txt` 中通过 IMPORTED 方式链接上面的 `libvnt_ffi.so`，缺少该文件将导致构建失败。
+
 ## 构建与运行
 
 1. 使用 DevEco Studio 打开项目根目录。
-2. 等待 IDE 自动同步依赖（`oh_modules` 已被 gitignore，首次打开需触发同步/构建以下载）。
-3. 连接已开启开发者模式的 HarmonyOS 设备。
-4. 配置好本地签名后，执行 **Build → Build Hap(s)/APP(s)** 或直接运行到设备。
-
-> 提示：`entry/src/main/cpp` 为原生模块，构建时 IDE 会调用 CMake/ninja 自动编译生成 `.so`，无需手动操作。
+2. 按上节安装好 `libvnt_ffi.so` 固件。
+3. 等待 IDE 自动同步依赖（`oh_modules` 已被 gitignore，首次打开需触发同步/构建以下载）。
+4. 连接已开启开发者模式的 HarmonyOS 设备。
+5. 配置好本地签名后，执行 **Build → Build Hap(s)/APP(s)** 或直接运行到设备。
 
 ## 使用说明
 
