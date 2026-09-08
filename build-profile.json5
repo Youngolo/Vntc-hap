@@ -18,13 +18,13 @@
         "name": "release",
         "type": "HarmonyOS",
         "material": {
-          "storeFile": "D:/happ/Vntc/证书/Young.p12",
-          "storePassword": "0000001947EA414CDE502F9CB03A8EA240C2BB2BA76AB0DF980A7609A0A64EF1CA33B711781C293DDB",
-          "keyAlias": "Young",
-          "keyPassword": "00000019C7673FEFDC487F48F8CE3ECBAAF2B15F121FEA19B39261788DD2EB628A9CE698F206260096",
+          "storeFile": "D:/xxx.p12",
+          "storePassword": "xxx",
+          "keyAlias": "xxx",
+          "keyPassword": "xxx",
           "signAlg": "SHA256withECDSA",
-          "profile": "D:/happ/Vntc/证书/Vntc-YoungRelease.p7b",
-          "certpath": "D:/happ/Vntc/证书/Young.cer"
+          "profile": "D:/Vntc-YoungRelease.p7b",
+          "certpath": "D:/xxx.cer"
         }
       }
     ],
