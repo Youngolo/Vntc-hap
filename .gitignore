@@ -10,11 +10,18 @@
 oh_modules/
 **/build/
 build/
+.appanalyzer/
 /appanalyzer/
+.preview/
 /.hvigor
 /.idea
 **/.cxx/
 .cxx/
+local.properties
+
+# Clang tooling local config
+.clangd
+.clang-tidy
 
 # Native build outputs (regenerable from entry/src/main/cpp sources)
 *.o
