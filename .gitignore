@@ -1,0 +1,39 @@
+# Git
+.git/
+.svn/
+
+# HarmonyOS / DevEco Studio
+.hvigor/
+.idea/
+.cache/
+.codegenie/
+oh_modules/
+**/build/
+build/
+/appanalyzer/
+/.hvigor
+/.idea
+**/.cxx/
+.cxx/
+
+# Native build outputs (regenerable from entry/src/main/cpp sources)
+*.o
+*.so
+*.a
+entry/libs/
+
+# Java / Gradle (harmony dependencies)
+*.class
+.gradle/
+
+# Signing certificates (sensitive)
+证书/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# OS
+Thumbs.db
+.DS_Store
