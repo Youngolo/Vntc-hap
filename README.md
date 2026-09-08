@@ -87,6 +87,16 @@ entry/libs/arm64-v8a/libvnt_ffi.so
 - **签名配置**：`build-profile.json5` 中的签名（`material`、`storePassword`、`keyPassword` 等）为**机器本地的敏感信息**，不同机器路径与密钥均不同，请勿将含真实凭据的版本提交到仓库。
 - 应用使用 `ohos.permission.INTERNET` 与系统 VPN 能力（`VpnExtensionAbility`），用于创建虚拟网卡与网络数据转发。
 
+## 截图预览
+
+主界面：
+
+![主界面](Image/main.jpg)
+
+浏览 NAS 网页：
+
+![浏览 NAS 网页](Image/nas.jpg)
+
 ## License
 
 [MIT](LICENSE)
