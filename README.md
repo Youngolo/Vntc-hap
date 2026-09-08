@@ -89,4 +89,4 @@ entry/libs/arm64-v8a/libvnt_ffi.so
 
 ## License
 
-（尚未指定开源协议，如有需要请补充 LICENSE 文件。）
+[MIT](LICENSE)
