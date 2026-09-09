@@ -1,6 +1,6 @@
 # Vntc
 
-Vntc 是运行于 **HarmonyOS（纯血鸿蒙）** 平台的 VNT 组网客户端，通过 [VNT](https://github.com/lblbc/vnt) 隧道内核连接自建服务端，将分布在不同网络的设备组成一个虚拟局域网，支持 NAT 穿透（P2P）与服务器中转，实现设备间的安全直连。
+Vntc 是运行于 **HarmonyOS（纯血鸿蒙）** 平台的 VNT 组网客户端，通过 [VNT](https://github.com/vnt-dev/vnt/tree/v1.2.17) 隧道内核连接自建服务端，将分布在不同网络的设备组成一个虚拟局域网，支持 NAT 穿透（P2P）与服务器中转，实现设备间的安全直连。
 
 - 应用包名：`top.16c.vntc`
 - 设备形态：手机（phone）
